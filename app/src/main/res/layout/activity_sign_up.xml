@@ -1,9 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".SignUpActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20sp">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20sp"
+            android:fontFamily="@font/Freedom"
+            android:text="WELCOME TO MY APPLICATION ! \n \n PLEASE SIGN UP HERE"
+            android:textColor="@color/colorApp"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_alignParentRight="true"
+            android:layout_margin="20dp"
+            android:src="@drawable/img"></ImageView>
+
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15sp"
+        android:background="@drawable/shape"
+        android:orientation="vertical"
+        android:padding="20sp">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Your Full Name"
+            android:inputType="text"
+            android:padding="10sp"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Your Email"
+            android:inputType="textEmailAddress"
+            android:padding="10sp"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Your Phone Number"
+            android:inputType="phone"
+            android:padding="10sp"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Your NCIN"
+            android:inputType="number"
+            android:padding="10sp"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Your Password"
+            android:inputType="text"
+            android:padding="10sp"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Confirm Your Password"
+            android:inputType="textPassword"
+            android:padding="10sp"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20sp"
+        android:backgroundTint="#C257D5"
+        android:text="SIGN UP"
+        android:textColor="#D29DDC"
+        app:cornerRadius="200sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Already have an account!\n                SIGN IN"
+        android:layout_gravity="center"
+        android:layout_marginTop="20sp"
+        android:textColor="@color/colorApp"
+        android:textStyle="bold"
+        android:textSize="15sp"/>
+
+
+</LinearLayout>
