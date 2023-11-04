@@ -16,8 +16,11 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="20sp"
-            android:fontFamily="@font/Freedom"
+            android:layout_marginStart="20sp"
+            android:layout_marginTop="20sp"
+            android:layout_marginEnd="20sp"
+            android:layout_marginBottom="20sp"
+            android:textStyle="bold"
             android:text="WELCOME TO MY APPLICATION ! \n \n PLEASE SIGN UP HERE"
             android:textColor="@color/colorApp"
             android:textSize="15sp" />
@@ -109,6 +112,7 @@
         app:cornerRadius="200sp" />
 
     <TextView
+        android:id="@+id/goToSignIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Already have an account!\n                SIGN IN"
