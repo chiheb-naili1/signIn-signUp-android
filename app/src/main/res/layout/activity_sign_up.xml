@@ -39,7 +39,7 @@
         android:layout_margin="15sp"
         android:background="@drawable/shape"
         android:orientation="vertical"
-        android:padding="20sp">
+        android:padding="23sp">
 
         <EditText
             android:layout_width="match_parent"
