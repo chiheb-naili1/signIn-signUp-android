@@ -16,21 +16,25 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20sp"
-            android:layout_marginTop="20sp"
-            android:layout_marginEnd="20sp"
+            android:layout_marginStart="40sp"
+            android:layout_marginTop="50sp"
+            android:layout_marginEnd="50sp"
             android:layout_marginBottom="20sp"
             android:textStyle="bold"
+
             android:text="WELCOME ! \n \n PLEASE SIGN UP HERE"
             android:textColor="@color/colorApp"
-            android:textSize="15sp" />
+            android:textSize="20sp" />
 
         <ImageView
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
             android:layout_alignParentRight="true"
-            android:layout_margin="20dp"
-            android:src="@drawable/img"/>
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:src="@drawable/img" />
 
 
     </RelativeLayout>
@@ -39,7 +43,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="15sp"
+        android:layout_margin="8sp"
         android:background="@drawable/shape"
         android:orientation="vertical"
         android:padding="23sp">
@@ -48,36 +52,49 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Your Full Name"
+            android:layout_margin="8sp"
             android:inputType="text"
+            android:minHeight="48dp"
             android:padding="10sp"
             android:textSize="15sp"
+            android:drawableTint="@color/colorApp"
+            android:drawableRight="@drawable/ic_name"
             android:textStyle="bold" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Your Email"
+            android:layout_margin="8sp"
             android:inputType="textEmailAddress"
             android:padding="10sp"
             android:textSize="15sp"
+            android:drawableRight="@drawable/ic_mail"
+            android:drawableTint="@color/colorApp"
             android:textStyle="bold" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Your Phone Number"
+            android:layout_margin="8sp"
             android:inputType="phone"
             android:padding="10sp"
             android:textSize="15sp"
+            android:drawableRight="@drawable/ic_phone"
+            android:drawableTint="@color/colorApp"
             android:textStyle="bold" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Your NCIN"
+            android:layout_margin="8sp"
             android:inputType="number"
             android:padding="10sp"
             android:textSize="15sp"
+            android:drawableRight="@drawable/ic_card"
+            android:drawableTint="@color/colorApp"
             android:textStyle="bold" />
 
         <EditText
@@ -86,16 +103,22 @@
             android:hint="Your Password"
             android:padding="10sp"
             android:inputType="textPassword"
+            android:layout_margin="8sp"
             android:textSize="15sp"
+            android:drawableRight="@drawable/ic_lock"
+            android:drawableTint="@color/colorApp"
             android:textStyle="bold" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="8sp"
             android:hint="Confirm Your Password"
             android:inputType="textPassword"
             android:padding="10sp"
             android:textSize="15sp"
+            android:drawableRight="@drawable/ic_lock"
+            android:drawableTint="@color/colorApp"
             android:textStyle="bold" />
 
 
@@ -106,9 +129,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="20sp"
-        android:backgroundTint="#C257D5"
+        android:backgroundTint="@color/colorApp"
         android:text="SIGN UP"
-        android:textColor="#D29DDC"
+        android:textColor="@color/white"
         app:cornerRadius="200sp" />
 
     <TextView
