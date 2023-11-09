@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -13,6 +14,7 @@ public class SignInActivity extends AppCompatActivity {
     private TextView goToSignUp;
     private Button signIn;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +23,7 @@ public class SignInActivity extends AppCompatActivity {
         forgetPass = findViewById(R.id.forgetPass);
         goToSignUp = findViewById(R.id.goToSignUp);
         signIn = findViewById(R.id.signIn);
+
 
         goToSignUp.setOnClickListener(v -> {
             startActivity(new Intent(SignInActivity.this,SignUpActivity.class));

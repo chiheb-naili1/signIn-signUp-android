@@ -28,9 +28,10 @@
         <ImageView
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
             android:layout_margin="20dp"
-            android:src="@drawable/img"/>
+            android:src="@drawable/img"
+            android:contentDescription="@string/todo" />
 
 
     </RelativeLayout>
@@ -47,27 +48,34 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20sp"
-            android:hint="Your Email"
+            android:hint="@string/email"
             android:inputType="textEmailAddress"
+            android:minHeight="48dp"
             android:padding="10sp"
             android:textColorHint="#A1887F"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:autofillHints="" />
 
         <EditText
+            android:id="@+id/editTextPassword"
+            style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8sp"
-            android:hint="Your Password"
+            android:hint="@string/password"
             android:inputType="textPassword"
+            android:minHeight="48dp"
             android:padding="10sp"
             android:textColorHint="#A1887F"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:autofillHints="" />
+
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Remember me"/>
+            android:text="@string/remember_me"/>
 
         <TextView
             android:id="@+id/forgetPass"
@@ -75,7 +83,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="right"
             android:text="Forget Password ?"
-            android:textSize="15sp"/>
+            android:textSize="15sp"
+            tools:ignore="RtlHardcoded" />
 
         <Button
             android:id="@+id/signIn"
