@@ -11,10 +11,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.app.R;
+import com.example.app.models.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -58,21 +62,55 @@ public class SignUpActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            Toast.makeText(SignUpActivity.this, "account created", Toast.LENGTH_SHORT).show();
+                            sendEmailVerification();
                         }else{
                             Toast.makeText(SignUpActivity.this, "register failed", Toast.LENGTH_SHORT).show();
                         }
                         } 
                     
                 });
+
             }
        });
     }
 
-      private Boolean validate() {
+    private void sendEmailVerification() {
+        FirebaseUser user = firebaseAuth.getCurrentUser();
+        if (user != null ){
+            user.sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    if (task.isSuccessful()){
+                        //send user data
+                        sendUserData();
+                        Toast.makeText(SignUpActivity.this, "registration done pls check your email", Toast.LENGTH_SHORT).show();
+                        firebaseAuth.signOut();
+                        startActivity(new Intent(SignUpActivity.this,SignInActivity.class));
+                        finish();
+                    }else {
+                        Toast.makeText(SignUpActivity.this, "registration failed", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
+        }
+    }
+
+    private void sendUserData() {
+
+        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+
+        DatabaseReference myRef = firebaseDatabase.getReference("Users");
+
+        User user = new User(fullNameS, phoneNumS, ncinS, emailS, passwordS);
+
+        myRef.child(""+firebaseAuth.getUid()).setValue(user);
+    }
+
+
+    private Boolean validate() {
          boolean result=false;
          fullNameS=fullNameet.getText().toString();
-       phoneNumS=phoneNumet.getText().toString();
+         phoneNumS=phoneNumet.getText().toString();
          ncinS=ncinet.getText().toString();
          emailS=emailet.getText().toString();
          passwordS=passwordet.getText().toString();
